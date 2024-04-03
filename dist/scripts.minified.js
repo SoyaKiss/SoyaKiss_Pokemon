@@ -1,4 +1,4 @@
-let pokemonRepository = (function () {
+let Repository = (function () {
   let e = [],
     t = document.querySelector("#modal-container");
   function n(t) {
