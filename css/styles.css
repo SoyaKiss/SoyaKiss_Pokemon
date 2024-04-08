@@ -8,38 +8,49 @@
   --black: black;
 }
 
-/* this is the default setting for overall width + padding + margins. Forces padding and border to be included in final width
-instead of them being added to the width */
 * {
   box-sizing: border-box;
 }
 
 .navbar {
   font-family: "Protest Riot", sans-serif;
-}
-
-.nav-link {
-  font-size: 24px;
+  padding: 2px;
   color: var(--darkestGreen);
 }
 
+a.nav-link {
+  font-size: 28px;
+  color: var(--black);
+}
+
 button.pokemon-button {
-  /* background-color: var(--darkestGreen); */
-  /* border: none; */
-  padding: 16px 32px;
+  padding: 10px 10px;
   font-size: 20px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 8px;
   color: var(--lightGreen);
-  width: 50%;
+  width: 20%;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
   font-family: "Protest Riot", sans-serif;
+  border-radius: 25px;
+  border-color: var(--lightGreen);
+  transition: transform 0.5s;
+}
+
+button.pokemon-button:hover {
+  background-color: var(--lightGreen);
+  color: var(--white);
+  border-color: var(--lightGreen);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.2);
+  transition: transform 0.5s;
 }
 
 li.list-item-pokemon {
   list-style-type: none;
+  padding-top: 10px;
 }
 
 ul.pokemon-list {
@@ -47,7 +58,6 @@ ul.pokemon-list {
   text-align: center;
 }
 
-/* Media Queries; smallest screen */
 @media screen and (max-width: 360px) {
   h1.pokedex-title {
     font-size: 50px;
@@ -55,7 +65,6 @@ ul.pokemon-list {
   }
 }
 
-/* Media Queries; medium screen */
 @media screen and (min-width: 361px) and (max-width: 720px) {
   h1.pokedex-title {
     font-size: 40px;
@@ -64,11 +73,61 @@ ul.pokemon-list {
   }
 }
 
-/* Media Queries; large screen */
 @media screen and (min-width: 721px) and (max-width: 1200px) {
   h1.pokedex-title {
     font-size: 30px;
     text-align: left;
     padding: 0 25px;
   }
+}
+
+h1 {
+  font-family: "Protest Riot", sans-serif;
+  font-size: 30px;
+  color: var(--grey);
+}
+
+.modal-header {
+  justify-content: center;
+  border-bottom: 1px solid var(--darkGreen);
+  background-color: var(--darkGreen);
+}
+
+.modal-footer {
+  background-color: var(--darkGreen);
+  border-top: 1px solid var(--darkGreen);
+}
+
+p {
+  font-family: "Protest Riot", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: var(--green);
+}
+
+.my-image {
+  display: block;
+  margin: auto;
+}
+
+.btn-secondary {
+  display: block;
+  margin: auto;
+  background-color: var(--grey);
+  font-family: "Protest Riot", sans-serif;
+  color: var(--darkestGreen);
+  border-radius: 20px;
+  transition: transform 0.5s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--darkestGreen);
+  border-color: var(--darkestGreen);
+  color: var(--grey);
+  transition: transform 0.5s;
+  transform: scale(1.4);
+}
+
+.navbar-dark-green {
+  background-color: var(--darkGreen);
 }

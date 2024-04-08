@@ -1,6 +1,20 @@
-.navbar,
-button.pokemon-button {
+.modal-footer,
+.modal-header {
+  background-color: var(--darkGreen);
+}
+p,
+ul.pokemon-list {
+  text-align: center;
+}
+.btn-secondary,
+.my-image {
+  display: block;
+  margin: auto;
+}
+.btn-secondary,
+.navbar {
   font-family: "Protest Riot", sans-serif;
+  color: var(--darkestGreen);
 }
 :root {
   --darkestGreen: #344341;
@@ -14,27 +28,41 @@ button.pokemon-button {
 * {
   box-sizing: border-box;
 }
-.nav-link {
-  font-size: 24px;
-  color: var(--darkestGreen);
+.navbar {
+  padding: 2px;
+}
+a.nav-link {
+  font-size: 28px;
+  color: var(--black);
 }
 button.pokemon-button {
-  padding: 16px 32px;
+  padding: 10px;
   font-size: 20px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 8px;
   color: var(--lightGreen);
-  width: 50%;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
+  width: 20%;
+  /* -webkit-transition-duration: 0.4s; */
   cursor: pointer;
+  font-family: "Protest Riot", sans-serif;
+  border-radius: 25px;
+  border-color: var(--lightGreen);
+  transition: transform 0.5s;
+}
+button.pokemon-button:hover {
+  background-color: var(--lightGreen);
+  color: var(--white);
+  border-color: var(--lightGreen);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.2);
+  transition: transform 0.5s;
 }
 li.list-item-pokemon {
   list-style-type: none;
+  padding-top: 10px;
 }
 ul.pokemon-list {
   padding: 0;
-  text-align: center;
 }
 @media screen and (max-width: 360px) {
   h1.pokedex-title {
@@ -55,4 +83,40 @@ ul.pokemon-list {
     text-align: left;
     padding: 0 25px;
   }
+}
+h1 {
+  font-family: "Protest Riot", sans-serif;
+  font-size: 30px;
+  color: var(--grey);
+}
+.modal-header {
+  justify-content: center;
+  border-bottom: 1px solid var(--darkGreen);
+}
+.modal-footer {
+  border-top: 1px solid var(--darkGreen);
+}
+p {
+  font-family: "Protest Riot", sans-serif;
+  font-size: 18px;
+  color: var(--green);
+}
+.btn-secondary {
+  background-color: var(--grey);
+  border-radius: 20px;
+  transition: transform 0.5s;
+}
+.btn-secondary:hover {
+  background-color: var(--darkestGreen);
+  border-color: var(--darkestGreen);
+  color: var(--grey);
+  transition: transform 0.5s;
+  transform: scale(1.4);
+}
+.navbar-dark-green {
+  background-color: var(--darkGreen);
+}
+
+.btn-primary {
+  display: none;
 }

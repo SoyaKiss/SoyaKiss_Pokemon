@@ -2,9 +2,7 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
   let modalContainer = document.querySelector("#modal-container");
-  // That is a link to the API
 
-  // These are standards that are part of the I.I.F.E function
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -15,26 +13,17 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     let pokemonUnorderedList = document.querySelector(".pokemon-list");
-    // This targets the UL class; pokemon-list
     let listItem = document.createElement("li");
-    // we are creating a new variable here called list item and declaring it to be a list item (li)
     let button = document.createElement("button");
     button.setAttribute("data-toggle", "modal");
     button.setAttribute("data-target", "#exampleModalCenter");
-    // We are adding a button functionality to these list items
     listItem.classList.add("list-item-pokemon");
-    // Here we are giving it a class
     button.innerText = pokemon.name;
-    // This is where we call the pokemon.name --> which comes from the API
     button.classList.add("btn", "btn-outline-secondary", "pokemon-button");
-    // We are declaring a class name for our button
     listItem.appendChild(button);
-    // Here we are appending the button to the list item
     pokemonUnorderedList.appendChild(listItem);
-    // Here we are appending the new button/list item to the unordered list
     button.addEventListener("click", function (event) {
       showDetails(pokemon);
-      // Here, upon clicking the button - we are executing the showDetails function which is listed below
     });
   }
 
@@ -65,7 +54,6 @@ let pokemonRepository = (function () {
         return response.json();
       })
       .then(function (details) {
-        // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types
@@ -81,15 +69,11 @@ let pokemonRepository = (function () {
     loadDetails(item).then(function () {
       showModal(item);
     });
-    // We first needed to call the loadDetails function; before showing the Modal --> because the modal
-    // is fetching data from the loadDetails function!
   }
 
-  // Adding the modal here --> will need to be replaced into the showDetails method
   function showModal(item) {
     let modalBody = document.querySelector(".modal-body");
     modalBody.innerHTML = "";
-    // let modalTitle = document.querySelector('.modal-title');
     let modalHeader = document.querySelector(".modal-header");
     modalHeader.innerHTML = "";
 
@@ -111,7 +95,6 @@ let pokemonRepository = (function () {
     modalBody.appendChild(typesElement);
     modalBody.appendChild(myImage);
 
-    // modalContainer.appendChild(modal);
     modalContainer.classList.add("is-visible");
     modalContainer.addEventListener("click", (e) => {
       let target = e.target;
@@ -148,7 +131,3 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-// document.querySelector('#show-modal').addEventListener('click', () => {
-//   showModal();
-// });
