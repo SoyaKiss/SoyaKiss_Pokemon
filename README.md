@@ -31,7 +31,7 @@ You can see these details upon clicking the button, which will show a complex UI
     <li>Ensure JavaScript code is formatted according to ESLint rules. Prettier may be used for formatting.</li>
 </ul>
 
-<h3>Technical:</h3>
+<h4>Additional Technical:</h4>
 <ul>
     <li>Formatted according to ESLint rules.</li>
     <li>Formatted using Prettier tools within VS Code.</li>
