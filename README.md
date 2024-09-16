@@ -1,3 +1,6 @@
+<h2>JavaScript App - Pokédex</h2>
+
+
 # Pokemon
 
 Full Stack Exercise 1
